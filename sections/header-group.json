@@ -29,42 +29,38 @@
     "header": {
       "type": "header",
       "blocks": {
-        "header_manu_WKjBmH": {
-          "type": "Header_Manu",
+        "text_fzPrBL": {
+          "type": "text",
           "settings": {
-            "title": "Pant",
-            "Newmain-menu": "features",
-            "collection1": "automated-collection"
+            "mega-menu-title": "catalog",
+            "menu-title-01": "PortFolio",
+            "menu01": "portfolio",
+            "menu-title-02": "Header Layout",
+            "menu02": "header-layouts",
+            "menu-title-03": "Features",
+            "menu03": "feature-01",
+            "menu-title-04": "Other Pages",
+            "menu04": "other-page"
           }
         },
-        "header_manu_zUgX3V": {
-          "type": "Header_Manu",
+        "text_xkwwKh": {
+          "type": "text",
           "settings": {
-            "title": "Best",
-            "Newmain-menu": "product-details",
-            "collection1": "automated-collection"
-          }
-        },
-        "single_link_gRQpce": {
-          "type": "Single_Link",
-          "settings": {
-            "single_title": "Tshirt",
-            "url": "shopify:\/\/collections"
-          }
-        },
-        "single_link_XzrQ6D": {
-          "type": "Single_Link",
-          "settings": {
-            "single_title": "Jeans",
-            "url": "shopify:\/\/collections"
+            "mega-menu-title": "contact",
+            "menu-title-01": "test",
+            "menu01": "header-layouts",
+            "menu-title-02": "test 2",
+            "menu02": "footer",
+            "menu-title-03": "",
+            "menu03": "",
+            "menu-title-04": "",
+            "menu04": ""
           }
         }
       },
       "block_order": [
-        "header_manu_WKjBmH",
-        "header_manu_zUgX3V",
-        "single_link_gRQpce",
-        "single_link_XzrQ6D"
+        "text_fzPrBL",
+        "text_xkwwKh"
       ],
       "settings": {
         "logo_position": "middle-left",

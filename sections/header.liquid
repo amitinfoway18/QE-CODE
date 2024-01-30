@@ -157,7 +157,7 @@
   <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if section.settings.menu != blank
-        render 'header-drawer'
+        render 'header-drawer', section: section
       endif
 
       if section.settings.logo_position == 'top-center' or section.settings.menu == blank
@@ -200,7 +200,7 @@
         if section.settings.menu_type_desktop == 'dropdown'
           render 'header-dropdown-menu'
         elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
+          render 'header-mega-menu', section: section
         endif
       endif
     %}
@@ -499,6 +499,7 @@
 {
   "name": "t:sections.header.name",
   "class": "section-header",
+  "max_blocks": 3,
   "settings": [
     {
       "type": "select",
@@ -684,40 +685,70 @@
       "type": "@app"
     },
     {
-      "type": "Header_Manu",
-      "name": "Add Mega Menu",
+      "type": "text",
+      "name": "Mega Menu",
       "settings": [
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Title"
-          },
-          {
-           "type":      "link_list",
-           "id":        "Newmain-menu",
-           "label":     "Add Menu"
-         },
-         {
-            "id": "collection1",
-            "type": "collection",
-            "label": "Select Collection"
-         }
-      ]
-    },
-    {
-      "type": "Single_Link",
-      "name": "Add Single LInk",
-      "settings": [
-                  {
-           "type":      "text",
-           "id":        "single_title",
-           "label":     "Add Title"
-         },
-                          {
-           "type":      "url",
-           "id":        "url",
-           "label":     "Add URL"
-         }
+        {
+          "type": "text",
+          "id": "mega-menu-title",
+          "label": "Enter Mega Menu Title"
+        },
+        {
+          "type": "header",
+          "content": "Menu Position 01"
+        },
+        {
+          "type": "text",
+          "id": "menu-title-01",
+          "label": "Select Menu 01"
+        },
+        {
+          "type": "link_list",
+          "id": "menu01",
+          "label": "Select Menu 01"
+        },
+        {
+          "type": "header",
+          "content": "Menu Position 02"
+        },
+        {
+          "type": "text",
+          "id": "menu-title-02",
+          "label": "Select Menu 02"
+        },
+        {
+          "type": "link_list",
+          "id": "menu02",
+          "label": "Select Menu 02"
+        },
+        {
+          "type": "header",
+          "content": "Menu Position 03"
+        },
+        {
+          "type": "text",
+          "id": "menu-title-03",
+          "label": "Select Menu 03"
+        },
+        {
+          "type": "link_list",
+          "id": "menu03",
+          "label": "Select Menu 03"
+        },
+        {
+          "type": "header",
+          "content": "Menu Position 04"
+        },
+        {
+          "type": "text",
+          "id": "menu-title-04",
+          "label": "Select Menu 04"
+        },
+        {
+          "type": "link_list",
+          "id": "menu04",
+          "label": "Select Menu 04"
+        }   
       ]
     }
   ]
