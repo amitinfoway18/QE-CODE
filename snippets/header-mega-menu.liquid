@@ -1,0 +1,86 @@
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+
+<nav class="header__inline-menu header__inline-menu_ar">
+  <ul class="list-menu list-menu--inline" role="list">
+    {% for block in section.blocks %}
+      <li>
+        {% if block.type == 'Header_Manu' %}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+              <summary
+                id="HeaderMenu"
+                class="header__menu-item list-menu__item link focus-inset"
+              >
+                <span>
+                  {{ block.settings.title }}
+                </span>
+                {% render 'icon-caret' %}
+              </summary>
+
+              <div
+                id="MegaMenu-Content-{{ forloop.index }}"
+                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                tabindex="-1"
+              >
+                <div class="mega-menu-left">
+                  <ul>
+                    {%- for link in linklists[block.settings['Newmain-menu']].links -%}
+                      <li>
+                        {% if link.title contains '|' %}
+                          {% assign split_title = link.title | split: ' | ' %}
+                          <a href="{{ link.url }}">
+                            {{- split_title[0] }}
+                            <sup class="{{ split_title[1] | handleize }}">{{ split_title[1] }}</sup>
+                          </a>
+                        {% else %}
+                          <a href="{{ link.url }}">{{ link.title }}</a>
+                        {% endif %}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </div>
+                <div class="mega-menu-right">
+                  <div
+                    id="slick_pp"
+                    data-id="{{ section.id }}"
+                    class="slider_tab_check"
+                  >
+                    {%- assign collection = collections[block.settings.collection1] -%}
+                    {%- for product in collection.products limit: 6 -%}
+                      <div class="grid-item-custom">
+                        {% render 'card-product-menu', card_product: product %}
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              </div>
+            </details>
+          </header-menu>
+        {%- endif -%}
+        {% if block.type == 'Single_Link' %}
+          <a
+            id="HeaderMenu-{{ link.handle }}"
+            href="{{ block.settings.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span
+              {% if link.current %}
+                class="header__active-menu-item"
+              {% endif %}
+            >
+              {{ block.settings.single_title }}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

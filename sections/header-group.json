@@ -1,0 +1,90 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "header_manu_WKjBmH": {
+          "type": "Header_Manu",
+          "settings": {
+            "title": "Pant",
+            "Newmain-menu": "features",
+            "collection1": "automated-collection"
+          }
+        },
+        "header_manu_zUgX3V": {
+          "type": "Header_Manu",
+          "settings": {
+            "title": "Best",
+            "Newmain-menu": "product-details",
+            "collection1": "automated-collection"
+          }
+        },
+        "single_link_gRQpce": {
+          "type": "Single_Link",
+          "settings": {
+            "single_title": "Tshirt",
+            "url": "shopify:\/\/collections"
+          }
+        },
+        "single_link_XzrQ6D": {
+          "type": "Single_Link",
+          "settings": {
+            "single_title": "Jeans",
+            "url": "shopify:\/\/collections"
+          }
+        }
+      },
+      "block_order": [
+        "header_manu_WKjBmH",
+        "header_manu_zUgX3V",
+        "single_link_gRQpce",
+        "single_link_XzrQ6D"
+      ],
+      "settings": {
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "background-1",
+        "menu_color_scheme": "background-1",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}
